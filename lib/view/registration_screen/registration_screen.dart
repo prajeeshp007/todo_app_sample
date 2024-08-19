@@ -105,6 +105,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                               if (formkey.currentState!.validate()) {
                                 final SharedPreferences prefs =
                                     await SharedPreferences.getInstance();
+                                await prefs.setBool('isLoggedIn', true);
                                 final storedusername = prefs.get('username');
                                 final storedpassword = prefs.get('password');
                                 if (storedusername == username.text &&

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:todo_app_sample/utils/app_sessions.dart';
 import 'package:todo_app_sample/utils/color_constance.dart';
 import 'package:todo_app_sample/view/finished_task_screen/finished_task_screen.dart';
@@ -118,7 +119,7 @@ class _HomeScreenState extends State<HomeScreen> {
               title: Text('Wishlist'),
             ),
             InkWell(
-              onTap: () {
+              onTap: () async {
                 Navigator.push(
                     context,
                     MaterialPageRoute(

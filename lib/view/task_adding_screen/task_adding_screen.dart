@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:hive/hive.dart';
-import 'package:todo_app_sample/dummy_db.dart';
+
 import 'package:todo_app_sample/utils/app_sessions.dart';
 import 'package:todo_app_sample/utils/color_constance.dart';
 

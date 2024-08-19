@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:todo_app_sample/utils/color_constance.dart';
 import 'package:todo_app_sample/view/login_screen/login_screen.dart';
 
@@ -14,7 +15,9 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     Future.delayed(Duration(seconds: 3)).then(
-      (value) {
+      (value) async {
+        final SharedPreferences prefs = await SharedPreferences.getInstance();
+        await prefs.setBool('isLoggedIn', false);
         Navigator.pushReplacement(
             context,
             MaterialPageRoute(
